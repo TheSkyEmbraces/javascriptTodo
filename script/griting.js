@@ -5,12 +5,14 @@ const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden"
 const USERNAME_KEY = "username"
 
+
+
 function onLoginBtnClick(event){ //2번에서 키값이 null이면 이리 와서 키값을 생성하고 로컬스토리지에 저장   2-1번
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
     localStorage.setItem(USERNAME_KEY, username); //키값, 저장할 속성, 정보, 변수
-    paintGreetings()
+    paintGreetings(username)
 }
 
 function paintGreetings(username){  //2번에서 키값이 있으면 이리 와서 키값을 가지고 h1을 호출    2-2번
