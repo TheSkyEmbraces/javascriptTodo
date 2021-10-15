@@ -2,8 +2,8 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CLASSNAME = "hidden"
-const USERNAME_KEY = "username"
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
 
 
@@ -27,4 +27,4 @@ if(savedUsername === null){ //키값을 가지고 있는지 확인 하고 동작
     loginForm.addEventListener("submit",onLoginBtnClick);
 }else{
     paintGreetings(savedUsername);
-}     
+}
