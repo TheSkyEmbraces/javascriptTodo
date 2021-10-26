@@ -3,6 +3,7 @@ const toDoForm = document.querySelector("#todo-form"),
     toDoList = document.querySelector("#todo-list");
 
 let toDos = [];
+
 const TODOS_KEY = "toDos"
 
 function saveToDos(){
@@ -12,10 +13,13 @@ function saveToDos(){
 function deleteToDo(event){
     const li = event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function paintToDo(newToDo){
     const li = document.createElement("li");
+    li.id = newToDo.id;
     const span = document.createElement("span")
     span.innerText = newToDo.text;
     const button = document.createElement("button");
@@ -29,7 +33,6 @@ function paintToDo(newToDo){
 
 function handleToDoSubmit(event) {
     event.preventDefault();
-    li.id = newToDo.id
     const newToDo = toDoInput.value;
     toDoInput.value = ""; //인풋의 벨류값을 비우고 2번
     const newToDoObj = {

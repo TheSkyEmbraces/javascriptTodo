@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/css.min.css">
 </head>
 
 <body>
     <h2 id="clock"></h2>
     <form id="login-form" class="hidden">
-        <input type="text" required placeholder="당신의 이름은 무엇입니까?">
-        <input type="submit" value="Login"></input>
+        <input type="text" class="nameText" required placeholder="당신의 이름은 무엇입니까?">
+        <input type="submit" class="submitBtn" value="Login"></input>
     </form>
     <h1 id="greeting" class="hidden"></h1>
     <form id="todo-form">
@@ -24,12 +24,17 @@
         <span></span><br>
         <span></span>
     </div>
+    <div id="weather">
+        <span></span>
+        <span></span>
+    </div>
 
     <script src="script/griting.js"></script>
     <script src="script/clock.js"></script>
     <script src="script/quotes.js"></script>
     <script src="script/bg.js"></script>
     <script src="script/todo.js"></script>
+    <script src="script/weather.js"></script>
 </body>
 
 </html>
