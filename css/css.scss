@@ -1,17 +1,17 @@
 @charset "utf-8";
 
-.hidden{
+.hidden {
     display: none;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
 }
 
-body{
+body {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -23,7 +23,9 @@ body{
     align-items: center;
     text-align: center;
     word-break: keep-all;
-    img{
+    font-family:Arial, Helvetica, sans-serif;
+
+    img {
         position: absolute;
         top: 0;
         left: 0;
@@ -33,17 +35,21 @@ body{
         background-size: cover;
     }
 
-    #clock, #greeting, #todo-form, #todo-list, #quote{
+    #clock,
+    #greeting,
+    #todo-form,
+    #todo-list,
+    #quote {
         margin: 10px 0;
         padding: 0px 15px;
     }
 
-    #clock{
+    #clock {
         font-size: 4rem;
     }
 
-    #login-form{
-        .nameText{
+    #login-form {
+        .nameText {
             width: 100%;
             height: 100%;
             min-width: 320px;
@@ -57,29 +63,102 @@ body{
             color: #fff;
             text-align: center;
             font-size: 1.3em;
-            &::placeholder{
+
+            &::placeholder {
                 color: #fff;
                 font-size: 1em;
                 text-align: center;
                 font-weight: 700;
             }
         }
-        .submitBtn{
-            margin: 10px 0 30px 0;
-            border: 0;
-            background: #fff;
-            padding: 5px 10px;
-            font-weight: 700;
-            border-radius: 5px;
+
+        .submitBtn {
+            cursor: pointer;
+            display: inline-block;
+            width: 150px;
+            height: 54px;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            line-height: 50px;
+            margin: 15px 0;
+            font-size: 1.3rem;
+            &:hover {
+                width: 100px;
+                border-radius: 50%;
+                color: #000;
+                background-color: rgb(255, 255, 255);
+                transform: rotate(720deg);
+                transition: all 0.8s;
+            }
+    
+            &::before,
+            &::after {
+                position: absolute;
+                z-index: -1;
+                display: block;
+                content: '';
+            }
+    
+            &,
+            &::before,
+            &::after {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-transition: all .3s;
+                transition: all .3s;
+            }
+        }
+
+    }
+
+    #greeting {
+        border-top: 7px solid rgb(255, 255, 255);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom: 2px solid rgb(218, 218, 218);
+        background: rgba(255, 255, 255, .15);
+        color: #fff;
+        padding: 15px;
+    }
+
+    #todo-form {
+        input {
+            background: none;
+            color: #fff;
+            border: none;
+            border-bottom: 1px solid rgb(218, 218, 218);
+            text-align: center;
+            font-size: 1em;
+
+            &::placeholder {
+                color: #fff;
+                font-size: 1em;
+                text-align: center;
+                font-weight: 700;
+            }
         }
     }
 
-    #greeting{
-        border: 1px solid rgb(218, 218, 218);
-        background:rgba(48, 0, 32, 0.418);
-        color: #fff;
-        padding: 15px;
-        border-radius: 5px;
+    #todo-list{
+        li{
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            line-height: 10px;
+        }
+        button{
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 3px;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
     }
 
 }

@@ -1,11 +1,11 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector("#greeting");
+const toDoOnOff = document.querySelector("#todo-form");
+
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
-
-
 
 function onLoginBtnClick(event){ //2번에서 키값이 null이면 이리 와서 키값을 생성하고 로컬스토리지에 저장   2-1번
     event.preventDefault();
@@ -16,8 +16,9 @@ function onLoginBtnClick(event){ //2번에서 키값이 null이면 이리 와서
 }
 
 function paintGreetings(username){  //2번에서 키값이 있으면 이리 와서 키값을 가지고 h1을 호출    2-2번
-    greeting.innerText = `Hello ${username}`;
+    greeting.innerText = ` Hello \n ${username} `;
     greeting.classList.remove(HIDDEN_CLASSNAME);
+    toDoOnOff.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);  //자바스크립트가 유저 키를 가지고 있나 확인  1번
